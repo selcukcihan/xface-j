@@ -23,7 +23,7 @@
  * - Selcuk Cihan (selcukcihan@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej;
+package com.selcukcihan.android.xface;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -35,17 +35,17 @@ import javax.media.opengl.GL;
 import javax.media.opengl.GLCanvas;
 import javax.media.opengl.GLContext;
 
-import com.selcukcihan.xfacej.xengine.Drawable;
-import com.selcukcihan.xfacej.xengine.Entity;
-import com.selcukcihan.xfacej.xengine.IRenderer;
-import com.selcukcihan.xfacej.xengine.ITimer;
-import com.selcukcihan.xfacej.xengine.MorphController;
-import com.selcukcihan.xfacej.xengine.RenderManager;
-import com.selcukcihan.xfacej.xengine.RendererGL;
-import com.selcukcihan.xfacej.xface.FAPFile;
-import com.selcukcihan.xfacej.xface.FaceBase;
-import com.selcukcihan.xfacej.xface.IFapStream;
-import com.selcukcihan.xfacej.xfaceapp.ISound;
+import com.selcukcihan.android.xface.xengine.Drawable;
+import com.selcukcihan.android.xface.xengine.Entity;
+import com.selcukcihan.android.xface.xengine.IRenderer;
+import com.selcukcihan.android.xface.xengine.ITimer;
+import com.selcukcihan.android.xface.xengine.MorphController;
+import com.selcukcihan.android.xface.xengine.RenderManager;
+import com.selcukcihan.android.xface.xengine.RendererGL;
+import com.selcukcihan.android.xface.xface.FAPFile;
+import com.selcukcihan.android.xface.xface.FaceBase;
+import com.selcukcihan.android.xface.xface.IFapStream;
+import com.selcukcihan.android.xface.xfaceapp.ISound;
 
 
 public class XFaceApplication

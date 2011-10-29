@@ -23,7 +23,7 @@
  * - Selcuk Cihan (selcukcihan@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej;
+package com.selcukcihan.android.xface;
 
 import java.applet.AudioClip;
 import java.net.MalformedURLException;
