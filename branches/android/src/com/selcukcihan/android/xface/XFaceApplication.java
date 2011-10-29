@@ -31,7 +31,7 @@ import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Scanner;
 
-import javax.media.opengl.GL;
+import javax.microedition.khronos.opengles.GL11;
 import javax.media.opengl.GLCanvas;
 import javax.media.opengl.GLContext;
 
