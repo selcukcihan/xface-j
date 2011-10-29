@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xface;
+package com.selcukcihan.android.xface.xface;
 
 /*
  * XFace::IInfluenceCalculator

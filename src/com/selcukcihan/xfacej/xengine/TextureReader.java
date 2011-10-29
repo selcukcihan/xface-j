@@ -1,11 +1,18 @@
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
+
+//ANDROID
+/*
 import com.sun.opengl.util.BufferUtil;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.awt.image.PixelGrabber;
+*/
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 import java.io.IOException;
 import java.nio.ByteBuffer;
 
@@ -13,6 +20,7 @@ import java.nio.ByteBuffer;
  * Image loading class that converts BufferedImages into a data
  * structure that can be easily passed to OpenGL.
  * @author Pepijn Van Eeckhoudt
+ * @author Selcuk Cihan
  */
 public class TextureReader {
     public static Texture readTexture(String filename) throws IOException {
@@ -20,7 +28,7 @@ public class TextureReader {
     }
 
     public static Texture readTexture(String filename, boolean storeAlphaChannel) throws IOException {
-        BufferedImage bufferedImage;
+        Bitmap bufferedImage;
         if (filename.endsWith(".bmp")) {
             bufferedImage = BitmapLoader.loadBitmap(filename);
         } else {
@@ -29,22 +37,19 @@ public class TextureReader {
         return readPixels(bufferedImage, storeAlphaChannel);
     }
 
-    private static BufferedImage readImage(String resourceName) throws IOException {
-        return ImageIO.read(ResourceRetriever.getResourceAsStream(resourceName));
+    private static Bitmap readImage(String resourceName) throws IOException {
+    	return BitmapFactory.decodeStream(ResourceRetriever.getResourceAsStream(resourceName));
+        //return ImageIO.read(ResourceRetriever.getResourceAsStream(resourceName));
     }
 
-    private static Texture readPixels(BufferedImage img, boolean storeAlphaChannel) {
+    private static Texture readPixels(Bitmap img, boolean storeAlphaChannel) {
+    	//img.copyPixelsToBuffer(un)
         int[] packedPixels = new int[img.getWidth() * img.getHeight()];
-
-        PixelGrabber pixelgrabber = new PixelGrabber(img, 0, 0, img.getWidth(), img.getHeight(), packedPixels, 0, img.getWidth());
-        try {
-            pixelgrabber.grabPixels();
-        } catch (InterruptedException e) {
-            throw new RuntimeException();
-        }
+        img.getPixels(packedPixels, 0, img.getWidth(), 0, 0, img.getWidth(), img.getHeight());
 
         int bytesPerPixel = storeAlphaChannel ? 4 : 3;
-        ByteBuffer unpackedPixels = BufferUtil.newByteBuffer(packedPixels.length * bytesPerPixel);
+        //ByteBuffer unpackedPixels = BufferUtil.newByteBuffer(packedPixels.length * bytesPerPixel);
+        ByteBuffer unpackedPixels = ByteBuffer.allocateDirect(packedPixels.length * bytesPerPixel);
 
         for (int row = img.getHeight() - 1; row >= 0; row--) {
             for (int col = 0; col < img.getWidth(); col++) {

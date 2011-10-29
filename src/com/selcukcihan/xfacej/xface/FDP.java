@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xface;
+package com.selcukcihan.android.xface.xface;
 
 /*
  * XFace::FDP
@@ -33,9 +33,9 @@ package com.selcukcihan.xfacej.xface;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import com.selcukcihan.xfacej.xmath.AxisAngle;
-import com.selcukcihan.xfacej.xmath.Quaternion;
-import com.selcukcihan.xfacej.xmath.Vector3;
+import com.selcukcihan.android.xface.xmath.AxisAngle;
+import com.selcukcihan.android.xface.xmath.Quaternion;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 public class FDP
 {

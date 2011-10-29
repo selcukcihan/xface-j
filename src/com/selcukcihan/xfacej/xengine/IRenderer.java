@@ -23,9 +23,9 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
-import javax.media.opengl.GL;
+import javax.microedition.khronos.opengles.GL11;
 
 /*
  * XEngine::IRenderer
@@ -35,7 +35,7 @@ import javax.media.opengl.GL;
 public interface IRenderer
 {
 	
-	public void render(Drawable pDrawable, GL p_gl); // virtual void render(boost::shared_ptr<Drawable> pDrawable) const = 0;
+	public void render(Drawable pDrawable, GL11 p_gl); // virtual void render(boost::shared_ptr<Drawable> pDrawable) const = 0;
 	public void setTransform(final Transform tr); // virtual void setTransform(const Transform& tr) = 0;
 	public void prepareBufferedMesh(IndexedFaceSet pMesh); // virtual void prepareBufferedMesh(IndexedFaceSet* pMesh) = 0;
 

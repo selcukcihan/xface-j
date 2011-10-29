@@ -23,16 +23,16 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xface;
+package com.selcukcihan.android.xface.xface;
 
 /*
  * XFace::ExpressionChannel
  * bitti.
  */
 
-import com.selcukcihan.xfacej.xengine.Entity;
-import com.selcukcihan.xfacej.xengine.MorphChannel;
-import com.selcukcihan.xfacej.xengine.MorphController;
+import com.selcukcihan.android.xface.xengine.Entity;
+import com.selcukcihan.android.xface.xengine.MorphChannel;
+import com.selcukcihan.android.xface.xengine.MorphController;
 
 public class ExpressionChannel extends MorphChannel
 {

@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 /*
  * XEngine::RenderManager
@@ -32,7 +32,7 @@ package com.selcukcihan.xfacej.xengine;
 
 import java.util.LinkedList;
 
-import javax.media.opengl.GL;
+import javax.microedition.khronos.opengles.GL11;
 
 public class RenderManager
 {
@@ -72,7 +72,7 @@ public class RenderManager
 		m_globalTransform = new Transform(tr);
 	}
 	
-	public void render(GL p_gl)
+	public void render(GL11 p_gl)
 	{
 		/*
 		 * void render() const;

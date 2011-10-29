@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 /*
  * XEngine::RenderList
@@ -33,7 +33,7 @@ package com.selcukcihan.xfacej.xengine;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import javax.media.opengl.GL;
+import javax.microedition.khronos.opengles.GL11;
 
 public class RenderList
 {
@@ -85,7 +85,7 @@ public class RenderList
 		m_List.clear();
 	}
 	//! Sends the contents of the list to IRenderer sequentially.
-	public void renderList(IRenderer pRenderer, GL p_gl)
+	public void renderList(IRenderer pRenderer, GL11 p_gl)
 	{
 		/*
 		 * void renderList(boost::shared_ptr<IRenderer> pRenderer) const;

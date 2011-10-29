@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xface;
+package com.selcukcihan.android.xface.xface;
 
 /*
  * XFace::FaceBase
@@ -36,16 +36,16 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Scanner;
 
-import javax.media.opengl.GL;
+import javax.microedition.khronos.opengles.GL11;
 
-import com.selcukcihan.xfacej.xengine.Drawable;
-import com.selcukcihan.xfacej.xengine.Entity;
-import com.selcukcihan.xfacej.xengine.MeshInfo;
-import com.selcukcihan.xfacej.xengine.ModelFileFactory;
-import com.selcukcihan.xfacej.xengine.MorphController;
-import com.selcukcihan.xfacej.xengine.TextureManager;
-import com.selcukcihan.xfacej.xengine.Transform;
-import com.selcukcihan.xfacej.xmath.Vector3;
+import com.selcukcihan.android.xface.xengine.Drawable;
+import com.selcukcihan.android.xface.xengine.Entity;
+import com.selcukcihan.android.xface.xengine.MeshInfo;
+import com.selcukcihan.android.xface.xengine.ModelFileFactory;
+import com.selcukcihan.android.xface.xengine.MorphController;
+import com.selcukcihan.android.xface.xengine.TextureManager;
+import com.selcukcihan.android.xface.xengine.Transform;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 public class FaceBase
 {
@@ -73,7 +73,7 @@ public class FaceBase
 		m_animProcessor = new AnimProcessor();
 	}
 	
-	private boolean initMorphTargets(final HashMap<String, LinkedList<MeshInfo>> targets, final String path, GL p_gl)
+	private boolean initMorphTargets(final HashMap<String, LinkedList<MeshInfo>> targets, final String path, GL11 p_gl)
 	{
 		/*
 		 * bool initMorphTargets(const std::map<std::string, std::list<XEngine::MeshInfo> >& targets, const std::string& path );
@@ -128,7 +128,7 @@ public class FaceBase
 		m_animProcessor.addPhonemeDictionary(dic);
 	}
 	
-	public void reset(GL p_gl)
+	public void reset(GL11 p_gl)
 	{
 		/*
 		 * void reset();
@@ -258,7 +258,7 @@ public class FaceBase
 			m_face.initInfluenceCalculators(m_pFDP.getItems());
 	}
 	
-	public boolean init(final String filename, final String path, GL p_gl)
+	public boolean init(final String filename, final String path, GL11 p_gl)
 	{
 		/*
 		 * virtual bool init(const std::string& filename, const std::string& path = "./");
@@ -303,7 +303,7 @@ public class FaceBase
 		return true;	
 	}
 	
-	public boolean initMeshes(final LinkedList<MeshInfo> filenames, final String path, GL p_gl)
+	public boolean initMeshes(final LinkedList<MeshInfo> filenames, final String path, GL11 p_gl)
 	{
 		/*
 		 * bool initMeshes(const std::list<XEngine::MeshInfo>& filenames, const std::string& path);

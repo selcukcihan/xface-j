@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 /*
  * XEngine::MorphBlender
@@ -38,9 +38,9 @@ import java.util.Set;
 import java.util.Vector;
 import java.util.Map.Entry;
 
-import com.selcukcihan.xfacej.xface.FDP;
-import com.selcukcihan.xfacej.xface.FDPItem;
-import com.selcukcihan.xfacej.xmath.Vector3;
+import com.selcukcihan.android.xface.xface.FDP;
+import com.selcukcihan.android.xface.xface.FDPItem;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 public class MorphBlender
 {

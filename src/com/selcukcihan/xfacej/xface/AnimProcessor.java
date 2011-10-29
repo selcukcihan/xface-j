@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xface;
+package com.selcukcihan.android.xface.xface;
 
 /*
  * XFace::AnimProcessor
@@ -39,11 +39,11 @@ import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Scanner;
 
-import com.selcukcihan.xfacej.xengine.Entity;
-import com.selcukcihan.xfacej.xengine.MorphChannel;
-import com.selcukcihan.xfacej.xengine.MorphController;
-import com.selcukcihan.xfacej.xengine.MorphTarget;
-import com.selcukcihan.xfacej.xface.PHOLoader.PHOPair;
+import com.selcukcihan.android.xface.xengine.Entity;
+import com.selcukcihan.android.xface.xengine.MorphChannel;
+import com.selcukcihan.android.xface.xengine.MorphController;
+import com.selcukcihan.android.xface.xengine.MorphTarget;
+import com.selcukcihan.android.xface.xface.PHOLoader.PHOPair;
 
 public class AnimProcessor
 {
@@ -75,7 +75,7 @@ public class AnimProcessor
 		/*
 		 * void pushPhoneme(const std::string& alias, unsigned int start, unsigned int end, float weight) const;
 		 */
-		if(alias.isEmpty() || end - start <= 0)
+		if(alias.length() == 0 || end - start <= 0)
 			return;
 		MorphController cont = MorphController.getInstance();
 		Entity toInsert = cont.getDictionaryItem(alias);

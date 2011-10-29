@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 import java.util.LinkedList;
 
@@ -57,6 +57,10 @@ public class MeshInfo
 		keyframe_category = new String(rhs.keyframe_category);
 		drawables = new LinkedList<Drawable>();
 		for(Drawable d : rhs.drawables)
-			drawables.push(new Drawable(d));
+		{
+			// ANDROID
+			//drawables.push(new Drawable(d));
+			drawables.add(0, new Drawable(d));
+		}
 	}
 }

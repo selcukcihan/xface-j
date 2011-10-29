@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 /*
  * XEngine::TextureLoaderGL
@@ -32,8 +32,9 @@ package com.selcukcihan.xfacej.xengine;
 
 import java.util.LinkedList;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.glu.GLU;
+import javax.microedition.khronos.opengles.GL11;
+//import javax.media.opengl.glu.GLU;
+import android.opengl.GLUtils;
 
 public class TextureLoaderGL implements ITextureLoader
 {
@@ -47,7 +48,7 @@ public class TextureLoaderGL implements ITextureLoader
 		m_TextureList = new LinkedList<Integer>();
 	}
 
-	public void unLoad(final ITexture pTexture, GL p_gl)
+	public void unLoad(final ITexture pTexture, GL11 p_gl)
 	{
 		// void unLoad(const ITexture* pTexture);
 		
@@ -58,7 +59,7 @@ public class TextureLoaderGL implements ITextureLoader
 		p_gl.glDeleteTextures(1, pTexture.getTextureID());
 	}
 
-	public boolean load(final String filename, ITexture pTexture, GL p_gl)
+	public boolean load(final String filename, ITexture pTexture, GL11 p_gl)
 	{
 		// bool load(const std::string& filename, ITexture* pTexture);
 		
@@ -79,22 +80,27 @@ public class TextureLoaderGL implements ITextureLoader
 		p_gl.glGenTextures(1, pTexture.m_TexID);
 
 		// This sets the alignment requirements for the start of each pixel row in memory.
-		p_gl.glPixelStorei(GL.GL_UNPACK_ALIGNMENT, 1);
+		p_gl.glPixelStorei(GL11.GL_UNPACK_ALIGNMENT, 1);
 
 		// Bind the texture to the texture arrays index and init the texture
-		p_gl.glBindTexture(GL.GL_TEXTURE_2D, pTexture.getTextureID().get(0));
+		p_gl.glBindTexture(GL11.GL_TEXTURE_2D, pTexture.getTextureID().get(0));
 
-		p_gl.glTexEnvf(GL.GL_TEXTURE_ENV, GL.GL_TEXTURE_ENV_MODE, GL.GL_MODULATE); 
+		p_gl.glTexEnvf(GL11.GL_TEXTURE_ENV, GL11.GL_TEXTURE_ENV_MODE, GL11.GL_MODULATE); 
 		// Lastly, we need to tell OpenGL the quality of our texture map.  GL_LINEAR is the smoothest.
 		// GL_NEAREST is faster than GL_LINEAR, but looks blochy and pixelated.  Good for slower computers though.
 		// Read more about the MIN and MAG filters at the bottom of main.cpp	
-		p_gl.glTexParameteri(GL.GL_TEXTURE_2D,GL.GL_TEXTURE_MAG_FILTER,GL.GL_LINEAR);
-		p_gl.glTexParameteri(GL.GL_TEXTURE_2D,GL.GL_TEXTURE_MIN_FILTER,GL.GL_LINEAR_MIPMAP_NEAREST);
-		
+		p_gl.glTexParameteri(GL11.GL_TEXTURE_2D,GL11.GL_TEXTURE_MAG_FILTER,GL11.GL_LINEAR);
+		p_gl.glTexParameteri(GL11.GL_TEXTURE_2D,GL11.GL_TEXTURE_MIN_FILTER,GL11.GL_LINEAR_MIPMAP_NEAREST);
+
+		/*ANDROID
 		final GLU glu = new GLU();
 		// Build Mipmaps (builds different versions of the picture for distances - looks better)
 		//glu.gluBuild2DMipmaps(GL.GL_TEXTURE_2D, 3, loader.getWidth(), loader.getHeight(), GL.GL_BGRA, GL.GL_UNSIGNED_BYTE, loader.getData());
-        glu.gluBuild2DMipmaps(GL.GL_TEXTURE_2D, GL.GL_RGB8, loader.getWidth(), loader.getHeight(), GL.GL_RGB, GL.GL_UNSIGNED_BYTE, loader.getData());
+        glu.gluBuild2DMipmaps(GL11.GL_TEXTURE_2D, GL11.GL_RGB8, loader.getWidth(), loader.getHeight(), GL11.GL_RGB, GL11.GL_UNSIGNED_BYTE, loader.getData());
+        */
+		p_gl.glTexParameterf(GL11.GL_TEXTURE_2D, GL11.GL_GENERATE_MIPMAP, GL11.GL_TRUE);
+		GLUtils.texImage2D(GL11.GL_TEXTURE_2D, 0, null, 0); 
+
 
 		m_TextureList.add(pTexture.getTextureID().get(0));
 

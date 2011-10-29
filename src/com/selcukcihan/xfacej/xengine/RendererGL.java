@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 /*
  * XEngine::RendererGL
@@ -31,13 +31,14 @@ package com.selcukcihan.xfacej.xengine;
  * sanirim kullanmiycam buffer extensionlarini simdilik
  */
 
-import javax.media.opengl.GL;
-import com.selcukcihan.xfacej.xmath.Vector3;
+import javax.microedition.khronos.opengles.GL11;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 public class RendererGL implements IRenderer
 {
 	private static final int MAX_EXTENSIONS = 1024;
-	private boolean [] m_supported = new boolean[MAX_EXTENSIONS];
+	// ANDROID
+	//private boolean [] m_supported = new boolean[MAX_EXTENSIONS];
 	
 	//private final GL m_gl;
 	
@@ -74,8 +75,9 @@ public class RendererGL implements IRenderer
 		if(!isExtSupported(XGL_EXTENSIONS.XGL_ARB_vertex_buffer_object))
 			return;
 	}
-	
-	private void deleteBuffers(GL p_gl)
+	/*
+	 * ANDROID
+	private void deleteBuffers(GL11 p_gl)
 	{
 		// void deleteBuffers();
 		
@@ -91,56 +93,58 @@ public class RendererGL implements IRenderer
 			}
 		}
 	}
-	
-	private void doTexture(final ITexture tex, GL p_gl)
+	*/
+	private void doTexture(final ITexture tex, GL11 p_gl)
 	{
 		// void doTexture(const ITexture& tex) const;
 		
 		if(tex.getTextureType() == ITexture.TEXTURETYPE.TEXTURE2D)
 		{
-			p_gl.glEnable(GL.GL_TEXTURE_2D);
-			p_gl.glBindTexture(GL.GL_TEXTURE_2D, tex.getTextureID().get(0));
+			p_gl.glEnable(GL11.GL_TEXTURE_2D);
+			p_gl.glBindTexture(GL11.GL_TEXTURE_2D, tex.getTextureID().get(0));
 		}
 	}
 	
-	private void doGeometry(DeformableGeometry mesh, GL p_gl)
+	private void doGeometry(DeformableGeometry mesh, GL11 p_gl)
 	{
 		// void doGeometry(DeformableGeometry& mesh) const;
 		
-		p_gl.glVertexPointer(3, GL.GL_FLOAT, 0, mesh.getDeformedVerticesGL());
+		p_gl.glVertexPointer(3, GL11.GL_FLOAT, 0, mesh.getDeformedVerticesGL());
 		if(mesh.getNormals().size() != 0)
 		{
-			p_gl.glNormalPointer(GL.GL_FLOAT, 0, mesh.getNormalsGL());
-			p_gl.glEnableClientState(GL.GL_NORMAL_ARRAY );
+			p_gl.glNormalPointer(GL11.GL_FLOAT, 0, mesh.getNormalsGL());
+			p_gl.glEnableClientState(GL11.GL_NORMAL_ARRAY );
 		}
 		
 		if(mesh.getTexCoords().size() != 0)
 		{
-			p_gl.glTexCoordPointer(2, GL.GL_FLOAT, 0, mesh.getTexCoordsGL());
-			p_gl.glEnableClientState(GL.GL_TEXTURE_COORD_ARRAY);
+			p_gl.glTexCoordPointer(2, GL11.GL_FLOAT, 0, mesh.getTexCoordsGL());
+			p_gl.glEnableClientState(GL11.GL_TEXTURE_COORD_ARRAY);
 		}
 
-		p_gl.glEnableClientState(GL.GL_VERTEX_ARRAY);
-		p_gl.glDrawElements(GL.GL_TRIANGLES, mesh.getIndexCount(), GL.GL_UNSIGNED_INT, mesh.getIndicesGL());
+		p_gl.glEnableClientState(GL11.GL_VERTEX_ARRAY);
+		// ANDROID
+		//p_gl.glDrawElements(GL11.GL_TRIANGLES, mesh.getIndexCount(), GL11.GL_UNSIGNED_INT, mesh.getIndicesGL());
+		p_gl.glDrawElements(GL11.GL_TRIANGLES, mesh.getIndexCount(), GL11.GL_UNSIGNED_SHORT, mesh.getIndicesGL());
 		//glDrawArrays( GL_TRIANGLES, 0, mesh.getIndexCount()/3);
 		
-		p_gl.glDisableClientState( GL.GL_VERTEX_ARRAY );
+		p_gl.glDisableClientState( GL11.GL_VERTEX_ARRAY );
 		if(mesh.getNormals().size() != 0)
-			p_gl.glDisableClientState(GL.GL_NORMAL_ARRAY);
+			p_gl.glDisableClientState(GL11.GL_NORMAL_ARRAY);
 		
 		if(mesh.getTexCoords().size() != 0)
-			p_gl.glDisableClientState(GL.GL_TEXTURE_COORD_ARRAY);
+			p_gl.glDisableClientState(GL11.GL_TEXTURE_COORD_ARRAY);
 
 	}
 
-	private void doTransform(final Transform trans, GL p_gl)
+	private void doTransform(final Transform trans, GL11 p_gl)
 	{
 		// void doTransform(const Transform& trans) const;
 		
 		p_gl.glMultMatrixf(trans.getWorldTransform());
 	}
 
-	public void render(Drawable pDrawable, GL p_gl)
+	public void render(Drawable pDrawable, GL11 p_gl)
 	{
 		// void render(boost::shared_ptr<Drawable> pDrawable) const;
 		
@@ -186,7 +190,7 @@ public class RendererGL implements IRenderer
 		
 		doGeometry(pMesh, p_gl);
 
-		p_gl.glBindTexture(GL.GL_TEXTURE_2D, 0);
+		p_gl.glBindTexture(GL11.GL_TEXTURE_2D, 0);
 
 		p_gl.glPopMatrix();
 	}
@@ -201,8 +205,9 @@ public class RendererGL implements IRenderer
 	private boolean isExtSupported(XGL_EXTENSIONS ext)
 	{
 		// bool isExtSupported(XGL_EXTENSIONS ext) const {return m_supported[ext];};
-		
-		return m_supported[ext.ordinal()];
+		return false;
+		// ANDROID
+		//return m_supported[ext.ordinal()];
 	}
 
 }

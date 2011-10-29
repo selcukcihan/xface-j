@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xface;
+package com.selcukcihan.android.xface.xface;
 
 /*
  * XFace::EyeChannel
@@ -34,13 +34,13 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Vector;
 
-import com.selcukcihan.xfacej.xengine.DeformableGeometry;
-import com.selcukcihan.xfacej.xengine.Drawable;
-import com.selcukcihan.xfacej.xengine.Entity;
-import com.selcukcihan.xfacej.xengine.MeshManager;
-import com.selcukcihan.xfacej.xengine.MorphChannel;
-import com.selcukcihan.xfacej.xengine.Vector3Buffer;
-import com.selcukcihan.xfacej.xmath.Vector3;
+import com.selcukcihan.android.xface.xengine.DeformableGeometry;
+import com.selcukcihan.android.xface.xengine.Drawable;
+import com.selcukcihan.android.xface.xengine.Entity;
+import com.selcukcihan.android.xface.xengine.MeshManager;
+import com.selcukcihan.android.xface.xengine.MorphChannel;
+import com.selcukcihan.android.xface.xengine.Vector3Buffer;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 
 public class EyeChannel extends MorphChannel

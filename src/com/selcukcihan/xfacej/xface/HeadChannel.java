@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xface;
+package com.selcukcihan.android.xface.xface;
 
 /*
  * XFace::HeadChannel
@@ -32,12 +32,12 @@ package com.selcukcihan.xfacej.xface;
 
 import java.util.LinkedList;
 
-import com.selcukcihan.xfacej.xengine.Entity;
-import com.selcukcihan.xfacej.xengine.MorphChannel;
-import com.selcukcihan.xfacej.xengine.MorphController;
-import com.selcukcihan.xfacej.xengine.Transform;
-import com.selcukcihan.xfacej.xmath.Perlin;
-import com.selcukcihan.xfacej.xmath.Quaternion;
+import com.selcukcihan.android.xface.xengine.Entity;
+import com.selcukcihan.android.xface.xengine.MorphChannel;
+import com.selcukcihan.android.xface.xengine.MorphController;
+import com.selcukcihan.android.xface.xengine.Transform;
+import com.selcukcihan.android.xface.xmath.Perlin;
+import com.selcukcihan.android.xface.xmath.Quaternion;
 
 public class HeadChannel extends MorphChannel
 {

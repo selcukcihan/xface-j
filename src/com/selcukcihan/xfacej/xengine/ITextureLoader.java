@@ -23,9 +23,9 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
-import javax.media.opengl.GL;
+import javax.microedition.khronos.opengles.GL11;
 
 /*
  * XEngine::ITextureLoader
@@ -35,8 +35,8 @@ import javax.media.opengl.GL;
 public interface ITextureLoader
 {
 	 // virtual void unLoad(const ITexture* pTexture) = 0;
-	public void unLoad(final ITexture pTexture, GL p_gl);
+	public void unLoad(final ITexture pTexture, GL11 p_gl);
 	
 	 // virtual bool load(const std::string& filename, ITexture* pTexture) = 0;
-	public boolean load(final String filename, ITexture pTexture, GL p_gl);
+	public boolean load(final String filename, ITexture pTexture, GL11 p_gl);
 }

@@ -23,16 +23,16 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 import java.util.LinkedList;
 
-import javax.media.opengl.GL;
+import javax.microedition.khronos.opengles.GL11;
 
 public class VRML1Loader implements IModelLoader
 {
 
-	public LinkedList<Drawable> loadModel(String filename, String dir, GL p_gl)
+	public LinkedList<Drawable> loadModel(String filename, String dir, GL11 p_gl)
 	{
 		return null;
 	}

@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xface;
+package com.selcukcihan.android.xface.xface;
 
 /*
  * XFace::RaisedCosInfluence
@@ -33,9 +33,9 @@ package com.selcukcihan.xfacej.xface;
 import java.util.HashSet;
 import java.util.Vector;
 
-import com.selcukcihan.xfacej.xengine.MeshManager;
-import com.selcukcihan.xfacej.xengine.Vector3Buffer;
-import com.selcukcihan.xfacej.xmath.Vector3;
+import com.selcukcihan.android.xface.xengine.MeshManager;
+import com.selcukcihan.android.xface.xengine.Vector3Buffer;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 public abstract class RaisedCosInfluence extends IInfluenceCalculator
 {

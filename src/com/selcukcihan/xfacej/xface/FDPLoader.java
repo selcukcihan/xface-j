@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xface;
+package com.selcukcihan.android.xface.xface;
 
 /*
  * XFace::FDPLoader
@@ -34,16 +34,21 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import com.sun.org.apache.xerces.internal.parsers.DOMParser;
+//ANDROID
+//import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 
-import com.selcukcihan.xfacej.xengine.MeshInfo;
-import com.selcukcihan.xfacej.xmath.Vector3;
+import com.selcukcihan.android.xface.xengine.MeshInfo;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 public class FDPLoader
 {
@@ -111,14 +116,19 @@ public class FDPLoader
 		boolean retVal = false; /* assume the worst case, we couldnt load the fdp */
 		m_pFDP = pFDP;
 		
-        DOMParser parser = new DOMParser();
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		
         // parser.setFeature("http://apache.org/xml/features/dom/defer-node-expansion", true);
         // parser.setFeature("http://apache.org/xml/features/continue-after-fatal-error", true);
         try
         {
-	        parser.parse(filename);
-	        Document document = parser.getDocument();
+        	DocumentBuilder parser = dbf.newDocumentBuilder();
+	        Document document = parser.parse(filename);
 	        retVal = parse(document);
+        }
+        catch(ParserConfigurationException pce)
+        {
+        	pce.printStackTrace();
         }
         catch(SAXException se)
         {
