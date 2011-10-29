@@ -1,5 +1,5 @@
 
-package com.selcukcihan.xfacej;
+package com.selcukcihan.android.xface;
 
 import java.applet.Applet;
 import java.awt.BorderLayout;
@@ -23,7 +23,7 @@ import javax.media.opengl.glu.*;
 
 import com.sun.opengl.util.Animator;
 
-import com.selcukcihan.xfacej.xmath.Vector3;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 public class XFaceApplet extends Applet
 {

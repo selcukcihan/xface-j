@@ -23,7 +23,7 @@
  * - Selcuk Cihan (selcukcihan@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej;
+package com.selcukcihan.android.xface;
 
 import java.awt.Font;
 import java.io.File;
@@ -43,13 +43,13 @@ import javax.media.opengl.glu.GLU;
 
 import com.sun.opengl.util.j2d.TextRenderer;
 
-import com.selcukcihan.xfacej.xengine.Drawable;
-import com.selcukcihan.xfacej.xengine.IRenderer;
-import com.selcukcihan.xfacej.xengine.RenderManager;
-import com.selcukcihan.xfacej.xengine.RendererGL;
-import com.selcukcihan.xfacej.xengine.VRML97Loader;
-import com.selcukcihan.xfacej.xfaceapp.ModelCamera;
-import com.selcukcihan.xfacej.xfaceapp.ModelCamera.kMODE;
+import com.selcukcihan.android.xface.xengine.Drawable;
+import com.selcukcihan.android.xface.xengine.IRenderer;
+import com.selcukcihan.android.xface.xengine.RenderManager;
+import com.selcukcihan.android.xface.xengine.RendererGL;
+import com.selcukcihan.android.xface.xengine.VRML97Loader;
+import com.selcukcihan.android.xface.xfaceapp.ModelCamera;
+import com.selcukcihan.android.xface.xfaceapp.ModelCamera.kMODE;
 
 
 public class XFaceDriver implements GLEventListener

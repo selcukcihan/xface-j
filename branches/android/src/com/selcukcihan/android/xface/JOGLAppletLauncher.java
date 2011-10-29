@@ -4,7 +4,7 @@
  * contact lilian.chamontin at f r e e . f r
  */
 
-package com.selcukcihan.xfacej;
+package com.selcukcihan.android.xface;
 
 import java.awt.BorderLayout;
 import java.net.URL;

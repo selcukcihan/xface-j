@@ -23,7 +23,7 @@
  * - Selcuk Cihan (selcukcihan@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej;
+package com.selcukcihan.android.xface;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -46,8 +46,8 @@ import javax.media.opengl.glu.*;
 
 import com.sun.opengl.util.Animator;
 
-import com.selcukcihan.xfacej.xengine.*;
-import com.selcukcihan.xfacej.xmath.Vector3;
+import com.selcukcihan.android.xface.xengine.*;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 public class XFaceMain extends Frame
 {

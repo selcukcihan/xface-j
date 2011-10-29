@@ -23,9 +23,9 @@
  * - Selcuk Cihan (selcukcihan@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej;
+package com.selcukcihan.android.xface;
 
-import com.selcukcihan.xfacej.xengine.ITimer;
+import com.selcukcihan.android.xface.xengine.ITimer;
 
 
 public class XFaceTimer implements ITimer

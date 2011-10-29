@@ -1,8 +1,8 @@
 
-package com.selcukcihan.xfacej;
+package com.selcukcihan.android.xface;
 
 
-import java.awt.image.BufferedImage;
+import android.graphics.Bitmap;
 import java.io.File;
 import java.io.IOException;
 import java.nio.Buffer;
@@ -11,8 +11,7 @@ import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
 
 import javax.imageio.ImageIO;
-import javax.media.opengl.*;
-import javax.media.opengl.glu.*;
+import javax.microedition.khronos.opengles.GL11;
 
 public class GLTest implements GLEventListener
 {
