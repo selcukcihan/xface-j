@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="com/selcukcihan/android/xface/XFaceSound.java" kind="src" path="src"/>
+	<classpathentry excluding="com/selcukcihan/android/xface/XFaceSound.java|com/selcukcihan/android/xface/JOGLAppletLauncher.java|com/selcukcihan/android/xface/XFaceApplet.java|com/selcukcihan/android/xface/GLTest.java|com/selcukcihan/android/xface/XFaceMain.java|com/selcukcihan/android/xface/XFaceDriver.java" kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="output" path="bin"/>
