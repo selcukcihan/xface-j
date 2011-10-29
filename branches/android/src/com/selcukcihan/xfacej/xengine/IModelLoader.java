@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 /*
  * XEngine::IModelLoader
@@ -32,10 +32,10 @@ package com.selcukcihan.xfacej.xengine;
 
 import java.util.LinkedList;
 
-import javax.media.opengl.GL;
+import javax.microedition.khronos.opengles.GL11;
 
 public interface IModelLoader
 {
 	// virtual std::list<boost::shared_ptr<Drawable> > loadModel(const std::string &filename, const std::string& dir="./") = 0;
-	public LinkedList<Drawable> loadModel(final String filename, final String dir, GL p_gl);
+	public LinkedList<Drawable> loadModel(final String filename, final String dir, GL11 p_gl);
 }

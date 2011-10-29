@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 /*
  * XEngine::KeyframeInterpolator
@@ -33,7 +33,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Vector;
 
-import com.selcukcihan.xfacej.xmath.Vector3;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 public class KeyframeInterpolator
 {

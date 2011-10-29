@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xface;
+package com.selcukcihan.android.xface.xface;
 
 /*
  * XFace::FaceEntity
@@ -34,14 +34,14 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Vector;
 
-import com.selcukcihan.xfacej.xengine.DeformableGeometry;
-import com.selcukcihan.xfacej.xengine.Drawable;
-import com.selcukcihan.xfacej.xengine.Entity;
-import com.selcukcihan.xfacej.xengine.KeyframeInterpolator;
-import com.selcukcihan.xfacej.xengine.MeshManager;
-import com.selcukcihan.xfacej.xengine.MorphController;
-import com.selcukcihan.xfacej.xmath.Quaternion;
-import com.selcukcihan.xfacej.xmath.Vector3;
+import com.selcukcihan.android.xface.xengine.DeformableGeometry;
+import com.selcukcihan.android.xface.xengine.Drawable;
+import com.selcukcihan.android.xface.xengine.Entity;
+import com.selcukcihan.android.xface.xengine.KeyframeInterpolator;
+import com.selcukcihan.android.xface.xengine.MeshManager;
+import com.selcukcihan.android.xface.xengine.MorphController;
+import com.selcukcihan.android.xface.xmath.Quaternion;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 public class FaceEntity extends Entity
 {

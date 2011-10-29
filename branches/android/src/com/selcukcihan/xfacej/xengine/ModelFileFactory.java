@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 /*
  * XEngine::ModelFileFactory
@@ -38,7 +38,7 @@ import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Scanner;
 
-import javax.media.opengl.GL;
+import javax.microedition.khronos.opengles.GL11;
 
 public class ModelFileFactory
 {
@@ -63,7 +63,7 @@ public class ModelFileFactory
 		return null;
 	}
 	
-	public static boolean initBinaryLoader(final String filename, final String path, GL gl)
+	public static boolean initBinaryLoader(final String filename, final String path, GL11 gl)
 	{
 		/*
 		 * static bool initBinaryLoader(const std::string& filename, const std::string& path);
@@ -95,7 +95,7 @@ public class ModelFileFactory
 		 */
 		return s_filenames.isEmpty();
 	}
-	public static LinkedList<Drawable> loadModelFile(final String filename, final String path, GL p_gl)
+	public static LinkedList<Drawable> loadModelFile(final String filename, final String path, GL11 p_gl)
 	{
 		/*
 		 * static std::list<boost::shared_ptr<Drawable> > loadModelFile(const std::string& filename, const std::string& path = "./");

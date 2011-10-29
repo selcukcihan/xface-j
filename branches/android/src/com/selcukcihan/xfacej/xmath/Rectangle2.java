@@ -23,14 +23,14 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xmath;
+package com.selcukcihan.android.xface.xmath;
 
 /*
  * XMath::Rectangle2
  * tamamlandi.
  */
 
-import com.selcukcihan.xfacej.xengine.Vertex2D;
+import com.selcukcihan.android.xface.xengine.Vertex2D;
 
 public class Rectangle2
 {

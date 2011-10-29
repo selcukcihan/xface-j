@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 /*
  * XEngine::OBJLoader
@@ -39,9 +39,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Vector;
 
-import javax.media.opengl.GL;
+import javax.microedition.khronos.opengles.GL11;
 
-import com.selcukcihan.xfacej.xmath.Vector3;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 public class OBJLoader implements IModelLoader
 {
@@ -175,7 +175,7 @@ public class OBJLoader implements IModelLoader
 	*/
 	}
 	
-	public LinkedList<Drawable> loadModel(final String filename, final String dir, GL p_gl)
+	public LinkedList<Drawable> loadModel(final String filename, final String dir, GL11 p_gl)
 	{
 		/*
 		 * std::list<boost::shared_ptr<Drawable> > loadModel(const std::string &filename, const std::string& dir="./");
@@ -222,7 +222,8 @@ public class OBJLoader implements IModelLoader
 			pDrawable = new Drawable();
 			pDrawable.setMeshName(str);
 			pDrawable.setTexName(str, 0);
-			drawables.push(pDrawable);			
+			drawables.add(0, pDrawable);
+			// no push method in android linkedlist?? drawables.push(pDrawable);
 		}
 		return drawables;
 	}

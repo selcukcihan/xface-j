@@ -23,7 +23,7 @@
  * - Selcuk Cihan (selcukcihan@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

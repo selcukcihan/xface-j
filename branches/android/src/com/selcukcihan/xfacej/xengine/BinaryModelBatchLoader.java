@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 /*
  * XEngine::BinaryModelBatchLoader
@@ -40,10 +40,10 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.LinkedList;
 
-import javax.media.opengl.GL;
+import javax.microedition.khronos.opengles.GL11;
 
-import com.selcukcihan.xfacej.xmath.Quaternion;
-import com.selcukcihan.xfacej.xmath.Vector3;
+import com.selcukcihan.android.xface.xmath.Quaternion;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 public class BinaryModelBatchLoader implements IModelLoader
 {
@@ -110,7 +110,7 @@ public class BinaryModelBatchLoader implements IModelLoader
 		return retVal;
 	}
 	
-	public boolean init(final String filename, final String path, final GL p_gl)
+	public boolean init(final String filename, final String path, final GL11 p_gl)
 	{
 		/*
 		 * bool init(const std::string& filename, const std::string& path);
@@ -201,7 +201,7 @@ public class BinaryModelBatchLoader implements IModelLoader
 		return true;
 	}
 	
-	public LinkedList<Drawable> loadModel(final String filename, final String dir, GL p_gl)
+	public LinkedList<Drawable> loadModel(final String filename, final String dir, GL11 p_gl)
 	{
 		/*
 		 * std::list<boost::shared_ptr<Drawable> > loadModel(const std::string &filename, const std::string& dir="./");

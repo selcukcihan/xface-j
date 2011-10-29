@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 /*
  * XEngine::Transform
@@ -32,9 +32,9 @@ package com.selcukcihan.xfacej.xengine;
 
 import java.nio.FloatBuffer;
 
-import com.selcukcihan.xfacej.xmath.Matrix4;
-import com.selcukcihan.xfacej.xmath.Quaternion;
-import com.selcukcihan.xfacej.xmath.Vector3;
+import com.selcukcihan.android.xface.xmath.Matrix4;
+import com.selcukcihan.android.xface.xmath.Quaternion;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 public class Transform
 {

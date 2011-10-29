@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 /*
  * XEngine::Geometry
@@ -35,7 +35,7 @@ import java.io.RandomAccessFile;
 import java.nio.FloatBuffer;
 import java.util.Vector;
 
-import com.selcukcihan.xfacej.xmath.Vector3;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 public abstract class Geometry extends NamedObj
 {

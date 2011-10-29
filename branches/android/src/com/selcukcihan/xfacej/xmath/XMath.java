@@ -23,12 +23,12 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xmath;
+package com.selcukcihan.android.xface.xmath;
 
 
-import com.selcukcihan.xfacej.xengine.IndexedFaceSet;
-import com.selcukcihan.xfacej.xengine.IntegerBuffer;
-import com.selcukcihan.xfacej.xengine.Vector3Buffer;
+import com.selcukcihan.android.xface.xengine.IndexedFaceSet;
+import com.selcukcihan.android.xface.xengine.IntegerBuffer;
+import com.selcukcihan.android.xface.xengine.Vector3Buffer;
 
 /*
  * XMath namespacesinde tanimli fonksiyonlar intersect_triangle* burada implement edildi(raytri.cpp)

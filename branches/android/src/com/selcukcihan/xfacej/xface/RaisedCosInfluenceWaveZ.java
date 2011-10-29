@@ -23,14 +23,14 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xface;
+package com.selcukcihan.android.xface.xface;
 
 /*
  * XFace::RaisedCosInfluenceWaveZ
  * bitti.
  */
 
-import com.selcukcihan.xfacej.xmath.Vector3;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 public class RaisedCosInfluenceWaveZ extends RaisedCosInfluence
 {

@@ -24,14 +24,14 @@
  * ***** END LICENSE BLOCK ***** */
 
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.Enumeration;
 import java.util.Vector;
 
-import com.selcukcihan.xfacej.xmath.Vector3;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 public class BufferWrapper
 {

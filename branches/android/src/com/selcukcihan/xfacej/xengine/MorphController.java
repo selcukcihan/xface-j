@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 /*
  * XEngine::MorphController
@@ -34,7 +34,7 @@ import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import com.selcukcihan.xfacej.xface.FDP;
+import com.selcukcihan.android.xface.xface.FDP;
 
 public class MorphController extends ITimedController
 {

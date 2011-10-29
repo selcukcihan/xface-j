@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xfaceapp;
+package com.selcukcihan.android.xface.xfaceapp;
 
 public interface ISound
 {

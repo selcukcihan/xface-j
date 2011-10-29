@@ -23,19 +23,20 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xfaceapp;
+package com.selcukcihan.android.xface.xfaceapp;
 
 /*
  * XFaceApp::ModelCamera
  * bitti.
  */
 
-import javax.media.opengl.GL;
+//import javax.media.opengl.GL;
+import javax.microedition.khronos.opengles.GL11;
 
-import com.selcukcihan.xfacej.xmath.AxisAngle;
-import com.selcukcihan.xfacej.xmath.Matrix4;
-import com.selcukcihan.xfacej.xmath.Quaternion;
-import com.selcukcihan.xfacej.xmath.Vector3;
+import com.selcukcihan.android.xface.xmath.AxisAngle;
+import com.selcukcihan.android.xface.xmath.Matrix4;
+import com.selcukcihan.android.xface.xmath.Quaternion;
+import com.selcukcihan.android.xface.xmath.Vector3;
 
 
 
@@ -148,7 +149,7 @@ public class ModelCamera
 		m_start.y = (float)y;
 		m_start.z = (float)y;
 	}
-	public void end(GL p_gl)
+	public void end(GL11 p_gl)
 	{
 		/*
 		 * void end();
@@ -161,7 +162,7 @@ public class ModelCamera
 			p_gl.glRotatef(m_rotAngle, m_rotAxis.x, m_rotAxis.y, m_rotAxis.z);
 		p_gl.glMultMatrixf(m_RotMatrix.getMatrix(), 0);
    
-		p_gl.glGetFloatv(GL.GL_MODELVIEW_MATRIX, m_RotMatrix.getMatrix(), 0);
+		p_gl.glGetFloatv(GL11.GL_MODELVIEW_MATRIX, m_RotMatrix.getMatrix(), 0);
 		p_gl.glPopMatrix();
 		
 		m_rotAngle = 0;
@@ -185,7 +186,7 @@ public class ModelCamera
 			break;
 		}
 	}
-	public void apply(GL p_gl)
+	public void apply(GL11 p_gl)
 	{
 		/*
 		 * void apply();
@@ -217,18 +218,18 @@ public class ModelCamera
 		m_panY = (long)trans.y;
 	}
 
-	public AxisAngle getAxisAngle(GL p_gl)
+	public AxisAngle getAxisAngle(GL11 p_gl)
 	{
 		/*
 		 * AxisAngle getAxisAngle() const;
 		 */
 		Matrix4 mat = new Matrix4();
-		p_gl.glGetFloatv(GL.GL_MODELVIEW_MATRIX, mat.getMatrix(), 0);
+		p_gl.glGetFloatv(GL11.GL_MODELVIEW_MATRIX, mat.getMatrix(), 0);
 		Quaternion quat = new Quaternion();
 		quat.FromRotationMatrix(mat);
 		return quat.ToAxisAngle();
 	}
-	public void setAxisAngle(final AxisAngle axisAngle, GL p_gl)
+	public void setAxisAngle(final AxisAngle axisAngle, GL11 p_gl)
 	{
 		/*
 		 * void setAxisAngle(const AxisAngle& axisAngle);

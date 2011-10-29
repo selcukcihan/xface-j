@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xengine;
+package com.selcukcihan.android.xface.xengine;
 
 /*
  * XEngine::TextureManager
@@ -33,7 +33,7 @@ package com.selcukcihan.xfacej.xengine;
 import java.util.Enumeration;
 import java.util.Hashtable;
 
-import javax.media.opengl.GL;
+import javax.microedition.khronos.opengles.GL11;
 
 public class TextureManager
 {
@@ -46,7 +46,7 @@ public class TextureManager
 		m_pTexLoader = new TextureLoaderGL();
 	}
 	
-	public ITexture load(final String filename, final String texname, GL p_gl)
+	public ITexture load(final String filename, final String texname, GL11 p_gl)
 	{
 		if(m_Storage.containsKey(texname))
 			return m_Storage.get(texname);
@@ -60,13 +60,13 @@ public class TextureManager
 		return pTexture;
 	}
 	
-	public void unLoad(final ITexture pTexture, GL p_gl)
+	public void unLoad(final ITexture pTexture, GL11 p_gl)
 	{
 		m_pTexLoader.unLoad(pTexture, p_gl);
 		unregisterTexture(pTexture, p_gl);
 	}
 	
-	public void unLoad(final String name, GL p_gl)
+	public void unLoad(final String name, GL11 p_gl)
 	{
 		unLoad(getTexture(name), p_gl);
 	}
@@ -83,7 +83,7 @@ public class TextureManager
 		return m_pThisTexMan;
 	}
 	
-	public void destroyAll(GL p_gl)
+	public void destroyAll(GL11 p_gl)
 	{
 		for(Enumeration<String> e = m_Storage.keys(); e.hasMoreElements();)
 		{
@@ -97,7 +97,7 @@ public class TextureManager
 		m_Storage.put(pTexture.getName(), pTexture);
 	}
 	
-	public void unregisterTexture(final ITexture pTexture, GL p_gl)
+	public void unregisterTexture(final ITexture pTexture, GL11 p_gl)
 	{
 		for(Enumeration<String> e = m_Storage.keys(); e.hasMoreElements();)
 		{

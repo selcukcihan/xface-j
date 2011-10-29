@@ -23,7 +23,7 @@
  * - Koray Balci (koraybalci@gmail.com)
  * ***** END LICENSE BLOCK ***** */
 
-package com.selcukcihan.xfacej.xmath;
+package com.selcukcihan.android.xface.xmath;
 
 /*
  * XMath::AxisAngle
