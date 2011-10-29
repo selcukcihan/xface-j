@@ -32,8 +32,8 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import javax.microedition.khronos.opengles.GL11;
-import javax.media.opengl.GLCanvas;
-import javax.media.opengl.GLContext;
+
+import android.opengl.GLSurfaceView;
 
 import com.selcukcihan.android.xface.xengine.Drawable;
 import com.selcukcihan.android.xface.xengine.Entity;
@@ -72,9 +72,9 @@ public class XFaceApplication
 	private IRenderer m_pRenderer;
 	private IFapStream m_pFapStream;
 	
-	private GLCanvas m_canvas;
+	private GLSurfaceView m_canvas;
 	
-	public XFaceApplication(GLCanvas p_canvas)
+	public XFaceApplication(GLSurfaceView p_canvas)
 	{
 		//m_gl = p_gl;
 		m_canvas = p_canvas;
@@ -129,20 +129,20 @@ public class XFaceApplication
 		return true;
 	}
 	
-	public void renderBegin(GL p_gl)
+	public void renderBegin(GL11 p_gl)
 	{
-		p_gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
-		p_gl.glMatrixMode(GL.GL_MODELVIEW);
+		p_gl.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
+		p_gl.glMatrixMode(GL11.GL_MODELVIEW);
 		p_gl.glPushMatrix();
 	}
 	
-	public void renderEnd(GL p_gl)
+	public void renderEnd(GL11 p_gl)
 	{
 		p_gl.glPopMatrix();
 		//swap buffers yap
 	}
 	
-	public void onRenderFrame(GL p_gl)
+	public void onRenderFrame(GL11 p_gl)
 	{
 		renderBegin(p_gl);
 		m_renderManager.render(p_gl);
@@ -166,7 +166,8 @@ public class XFaceApplication
 		}
 	}
 	
-	public boolean onResumePlayback(GL p_gl, XFaceSound xfaceSound)
+	// ANDROID public boolean onResumePlayback(GL11 p_gl, XFaceSound xfaceSound)
+	public boolean onResumePlayback(GL11 p_gl)
 	{
 		while(!acquireLock(false));
 //		try
@@ -205,7 +206,7 @@ public class XFaceApplication
 			MorphController con = MorphController.getInstance();
 			con.rewind();
 			m_pTimer.startTimer();
-			xfaceSound.m_play = true;
+			// ANDROID xfaceSound.m_play = true;
 			int sequenceDuration = m_sequenceDuration;
 			LinkedList<Drawable> oldDrawables = m_pFace.getDrawables();
 			while(sequenceDuration > 0)
@@ -248,7 +249,7 @@ public class XFaceApplication
 		return true;
 	}
 	
-	public void onStopPlayback(GL p_gl)
+	public void onStopPlayback(GL11 p_gl)
 	{
 		acquireLock(true);
 		
@@ -283,7 +284,7 @@ public class XFaceApplication
 		m_pFace.rewindKeyframeAnimation();
 	}
 	
-	public boolean onLoadFDP(String p_filename, String p_path, GL p_gl)
+	public boolean onLoadFDP(String p_filename, String p_path, GL11 p_gl)
 	{
 		if(m_bBusy)
 			return false;
